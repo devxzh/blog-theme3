@@ -4,7 +4,7 @@
 
 # Site
 title: Cloverkit's Blog
-subtitle:
+subtitle: What Can I Do.
 description:
 keywords:
 author: Cloverkit
@@ -81,5 +81,10 @@ deploy:
   type: git
   repository:
       github: git@github.com:cloverkits/cloverkits.github.io.git
-      coding: git@git.coding.net:Cloverkit/Cloverkit_Blog.git 
+      coding: git@git.coding.net:Cloverkit/cloverkit.git
   branch: master
+
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml

@@ -1,6 +1,7 @@
 ---
-title: about
+title: About
 date: 2018-08-07 23:44:22
+comments: false
 ---
 
 ![2079690960](media/about.png)
