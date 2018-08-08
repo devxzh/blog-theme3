@@ -379,9 +379,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid: p7HYIM4iVlBK98iHVJrNzsl7-gzGzoHsz
+  appkey: BSX1GPVqqrRWrtw0VzopFELW
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
@@ -532,9 +532,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: <c8YwLEmodESY79zjIE60tAXb-gzGzoHsz>
-  app_key: <LS0XnfmP0Og2yAOjN61XMYfz>
+  enable: true
+  app_id: p7HYIM4iVlBK98iHVJrNzsl7-gzGzoHsz
+  app_key: BSX1GPVqqrRWrtw0VzopFELW
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
