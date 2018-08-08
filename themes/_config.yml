@@ -81,3 +81,10 @@ deploy:
   type: git
   repo: git@github.com:cloverkits/cloverkits.github.io.git
   branch: master
+# RSS
+  feed:
+  type: rss2
+  path: rss2.xml
+  limit: 10
+  hub:
+  content: 'true'

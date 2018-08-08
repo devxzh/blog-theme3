@@ -1,6 +1,7 @@
 ---
 title: 配置 V2Ray 和路由器透明代理
 date: 2018-08-07 18:37:21
+categories: 科学上网
 tags: 折腾
 ---
 
