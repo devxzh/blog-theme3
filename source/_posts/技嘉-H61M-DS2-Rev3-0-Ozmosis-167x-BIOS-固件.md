@@ -1,8 +1,10 @@
 ---
 title: 技嘉 H61M-DS2 Rev3.0 Ozmosis 167x BIOS 固件
 date: 2018-08-07 11:39:46
-categories: Ozmosis
-tags: 折腾
+categories: 
+- Ozmosis
+tags: 
+- 折腾
 ---
 
 之前在逛论坛的偶然时候发现了 `Ozmosis` 这个引导程序
