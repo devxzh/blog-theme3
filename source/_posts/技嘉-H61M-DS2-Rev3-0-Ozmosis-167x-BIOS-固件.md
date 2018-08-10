@@ -49,7 +49,7 @@ Method：
 * 添加一个 `UEFI Shell` (可以使用 CLOVER 自带的)
 * 使用以下命令手动添加引导
 
-```
+```uefi
 bcfg boot addp 0 fsx:\System\Library\CoreServices\boot.efi "你想要的名称"
 ```
 注： `fsx` 为你安装 `macOS`的驱动器编号请自行更改
