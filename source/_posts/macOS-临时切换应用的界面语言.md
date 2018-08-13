@@ -29,7 +29,7 @@ tags:
 
 Apple：“很惭愧，就做了一点微小的工作，谢谢大家”
 
-====
+
 因为看起来实在是辣眼睛，笔者直接将 `嘤文` 设置为系统默认语言；但是由次也带来了一些问题，例如我使用 `CrossOver` 安装一些 `Win32` 应用会因为系统语言设置的问题而乱码，最初我还以为是配置除了问题知道我折腾到怀疑人生，才意识到是语言的问题。
 
 还有就是当我打开 `Photoshop` 亦或是 `Office 办公套件` 这类大型专业软件的时候会显得不知所措，很多陌生的词汇看不懂还有像 `Word` `Excel` `PowerPoint` 在处理中英文时存在差异，也会带来不必要的麻烦。
@@ -87,7 +87,6 @@ mdls -name kMDItemCFBundleIdentifier /Applications/Google\ Chrome.app
 ```bash
 defaults delete [应用的 Bundle ID] AppleLanguages
 ```
-===
 
 参考资料：
 
