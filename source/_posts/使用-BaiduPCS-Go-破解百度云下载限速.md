@@ -38,7 +38,7 @@ tags:
 >上传本地文件, 支持上传大文件(>2GB), 支持多个文件或目录上传;
 离线下载, 支持http/https/ftp/电驴/磁力链协议.
 
-![Releases](media/15341659173482.jpg)
+![Releases](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/BaiduPCS-Go Release.jpg)
 
 首先在官方 [`Releases`](https://github.com/iikira/BaiduPCS-Go/releases) 页面下载你需要的版本，笔者使用的是 `macOS` 选择 [BaiduPCS-Go-v3.5.3-darwin-osx-amd64.zip](https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.3/BaiduPCS-Go-v3.5.3-darwin-osx-amd64.zip)
 
@@ -50,20 +50,20 @@ CPU 架构区别：
 |386, x86	|armv5, armv7|mips, mipsle|适用于32位CPU或操作系统的计算机|
 
 
-![](media/15341669985482.jpg)
+![](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/Copy Document.jpg)
 
 下载之后解压到你想要的地方，为了方便调用我用 `alias` 创建了一个快捷命令 `baidudl` 修改你的 `.bashrc` `.zshrc` 或者其他 `Shell` 配置文件，修改完成之后使用 `source ~/.zshrc` 同步修改(这里拿`zsh`作为例子)
 
-![](media/15341672721166.jpg)
+![](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/addition alias.jpg)
 
 然后就可以使用 `baidudl` 轻松调用了
 
-![](media/15341677586646.jpg)
+![](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/Login.jpg)
 
 
 我们可以使用 `help` 命令获得使用帮助 操作还是比较简单的☺️
 
-![](media/15341680128168.jpg)
+![](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/exmple download.jpg)
 
 速度还是挺不错的，因为我家带宽的原因看起来不算很快但是已经达到峰值了
 

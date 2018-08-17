@@ -7,6 +7,8 @@ tags:
 - 折腾
 ---
 
+![](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/about-macOS.png)
+
 之前在逛论坛的偶然时候发现了 `Ozmosis` 这个引导程序
 刚开始我也没在意就是挺好奇的，一直想尝试一下
 毕竟 `Clover EFI Bootloader` 早已经用腻了

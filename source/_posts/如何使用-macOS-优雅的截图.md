@@ -10,7 +10,8 @@ tags:
 
 如图所示 `macOS` 原生支持 `快捷键` 截图，我们可以在 `系统偏好设置` 中发现这一点
 
-![](media/15344361774520.jpg)
+![](https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/Shortcut.jpg)
+
 有以下几种截图 `快捷键` 组合方式：
 
 >截取全屏并保存到桌面
