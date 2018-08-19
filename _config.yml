@@ -81,6 +81,7 @@ deploy:
   type: git
   repository:
       github: git@github.com:cloverkits/cloverkits.github.io.git
+      coding: git@git.coding.net:Cloverkit/cloverkit.git
   branch: master
 
 sitemap:
