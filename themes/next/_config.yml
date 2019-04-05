@@ -129,15 +129,15 @@ scheme: Gemini
 social:
   Telegram: https://t.me/cloverkit || telegram
   GitHub: https://github.com/cloverkits || github
-  E-Mail: mailto:cloverkit@outlook.com || envelope
+  #E-Mail: mailto:cloverkit@outlook.com || envelope
   #Google: https://plus.google.com/yourname || google
-  Twitter: https://twitter.com/cloverkits || twitter
-  Weibo: https://weibo.com/u/5260560805 || weibo
+  #Twitter: https://twitter.com/cloverkits || twitter
+  #Weibo: https://weibo.com/u/5260560805 || weibo
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
-  Instagram: https://instagram.com/cloverkits || instagram
+  #Instagram: https://instagram.com/cloverkits || instagram
   #Skype: skype:yourname?call|chat || skype
 
 social_icons:
