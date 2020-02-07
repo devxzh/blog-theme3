@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,折腾,教程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Cloverkit's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="ArchLinux 安装教程 启动 从安装介质启动 ArchLinux 并选择 ArchLinux archlinuxiso x86_64 UEFI CD 引导启动  PS:当前假设你以 UEFI 方式引导 Arch Linux如果你是 Legacy BIOS 方式界面会稍有不同   当屏幕出现命令提示符及闪烁的光标即启动完毕 设置 Arch ISO网络连接测试通过 ping 命令测试网络连通性">
+<meta name="keywords" content="Linux,折腾,教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ArchLinx 安装教程 [图🐰文]">
+<meta property="og:url" content="https://cloverkits.github.io/2018/08/20/ArchLinx-安装教程-图🐰文/index.html">
+<meta property="og:site_name" content="Cloverkit&#39;s Blog">
+<meta property="og:description" content="ArchLinux 安装教程 启动 从安装介质启动 ArchLinux 并选择 ArchLinux archlinuxiso x86_64 UEFI CD 引导启动  PS:当前假设你以 UEFI 方式引导 Arch Linux如果你是 Legacy BIOS 方式界面会稍有不同   当屏幕出现命令提示符及闪烁的光标即启动完毕 设置 Arch ISO网络连接测试通过 ping 命令测试网络连通性">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/archlinux-logo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/bootmenu.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/boot-finish.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/pingtest.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/changemirrorlist.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/envcheck.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/lsblk-map.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/cfdisk.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/format.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/format-esp.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/mount-part.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/visudo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/archlinux-neofetch.png">
+<meta property="og:updated_time" content="2020-02-07T11:32:38.639Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ArchLinx 安装教程 [图🐰文]">
+<meta name="twitter:description" content="ArchLinux 安装教程 启动 从安装介质启动 ArchLinux 并选择 ArchLinux archlinuxiso x86_64 UEFI CD 引导启动  PS:当前假设你以 UEFI 方式引导 Arch Linux如果你是 Legacy BIOS 方式界面会稍有不同   当屏幕出现命令提示符及闪烁的光标即启动完毕 设置 Arch ISO网络连接测试通过 ping 命令测试网络连通性">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/archlinux-logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://cloverkits.github.io/2018/08/20/ArchLinx-安装教程-图🐰文/"/>
+
+
+
+
+
+  <title>ArchLinx 安装教程 [图🐰文] | Cloverkit's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-123733102-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/cloverkits"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cloverkit's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">What Can I Do.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cloverkits.github.io/2018/08/20/ArchLinx-安装教程-图🐰文/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cloverkit">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cloverkit's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ArchLinx 安装教程 [图🐰文]</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T23:37:20+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ArchLinux/" itemprop="url" rel="index">
+                    <span itemprop="name">ArchLinux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/20/ArchLinx-安装教程-图🐰文/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/20/ArchLinx-安装教程-图🐰文/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/20/ArchLinx-安装教程-图🐰文/" class="leancloud_visitors" data-flag-title="ArchLinx 安装教程 [图🐰文]">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,529 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ArchLinux-安装教程"><a href="#ArchLinux-安装教程" class="headerlink" title="ArchLinux 安装教程"></a>ArchLinux 安装教程</h1><p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/archlinux-logo.png" alt="archlinux-logo"></p>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/bootmenu.png" alt="bootmenu"></p>
+<p>从<code>安装介质</code>启动 <code>ArchLinux</code> 并选择 <code>ArchLinux archlinuxiso x86_64 UEFI CD</code> 引导启动</p>
+<blockquote>
+<p>PS:<br>当前假设你以 <code>UEFI</code> 方式引导 Arch Linux<br>如果你是 <code>Legacy BIOS</code> 方式界面会稍有不同</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/boot-finish.png" alt="boot-finish"></p>
+<p>当屏幕出现<code>命令提示符</code>及闪烁的<code>光标</code>即启动完毕</p>
+<h2 id="设置-Arch-ISO"><a href="#设置-Arch-ISO" class="headerlink" title="设置 Arch ISO"></a>设置 Arch ISO</h2><h3 id="网络连接测试"><a href="#网络连接测试" class="headerlink" title="网络连接测试"></a>网络连接测试</h3><p>通过 ping 命令测试网络连通性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ping -c 4 qq.com</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/pingtest.png" alt="pingtest"></p>
+<h3 id="同步时间"><a href="#同步时间" class="headerlink" title="同步时间"></a>同步时间</h3><p>同步时间以确保时间准确无误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ timedatectl <span class="built_in">set</span>-ntp <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h3 id="选择软件源"><a href="#选择软件源" class="headerlink" title="选择软件源"></a>选择软件源</h3><p>由于你知道的原因在天朝访问一些国外网站的速度可想而知，选择合适的软件源头以获得更高的下载速度</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+<p>打开<code>镜像源</code>列表 搜索 <code>China</code> 然后把需要的<code>镜像源</code>地址剪切到文件的最前面即可</p>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/changemirrorlist.png" alt="changemirrorlist"></p>
+<blockquote>
+<p>中国大陆用户可使用以下命令选取大陆镜像服务器。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sed -i <span class="string">'/China/!&#123;n;/Server/s/^/#/&#125;;t;n'</span> /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="启动环境检测"><a href="#启动环境检测" class="headerlink" title="启动环境检测"></a>启动环境检测</h2><h3 id="UEFI-BIOS-检测"><a href="#UEFI-BIOS-检测" class="headerlink" title="UEFI/BIOS 检测"></a>UEFI/BIOS 检测</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/envcheck.png" alt="envcheck"></p>
+<p>如果出现上图执行结果则表明 <code>ArchISO</code> 以 <code>UEFI</code> 模式启动反之则是 <code>Legacy BIOS</code> or <code>CSM</code> 兼容模式</p>
+<h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><blockquote>
+<p>UEFI 启动对应 <code>GUID</code> 分区表 <code>Legacy BIOS</code> 方式启动对应 <code>MBR</code>分区表</p>
+</blockquote>
+<h3 id="分区方案"><a href="#分区方案" class="headerlink" title="分区方案"></a>分区方案</h3><ul>
+<li>一般而言对于 <code>Linux</code> 需要至少需要一个分区分配给<code>根目录</code> <code>/</code></li>
+<li>对于 <code>UEFI</code> 则额外需要一个 <code>UEFI</code> 系统分区 <code>ESP</code> 通常也叫做 <code>EFI</code> 分区</li>
+</ul>
+<h3 id="分区操作"><a href="#分区操作" class="headerlink" title="分区操作"></a>分区操作</h3><p>你可以使用 <code>fdisk -l</code> or <code>lsblk</code> 查看和确定目标磁盘或分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ fdisk -l</span><br><span class="line"><span class="comment">## 或者</span></span><br><span class="line">$ lsblk</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/lsblk-map.png" alt="lsblk-map"></p>
+<p>使用 <code>cfdisk</code> 对目标磁盘进行分区操作 [推荐 <code>cfdisk</code>]</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cfdisk /dev/sdX       <span class="comment"># sdX 为目标磁盘</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/cfdisk.png" alt="cfdisk"></p>
+<p>由于在虚拟机中作为演示我只分配了 20G 的磁盘空间作为分割，我分了三个分区分别是：</p>
+<blockquote>
+<p>EFI System ( ESP 分区)<br>/boot     （用于存储启动文件和内核）<br>/         （根分区 也就是上面提到的必须要分配的）</p>
+</blockquote>
+<p>对于 <code>ESP</code> 分区 300MB 就差不多够了，<code>boot</code> 分区因为内核更新新旧版本残留可能会占用一些空间可以酌情分配</p>
+<p>然后使用格式化工具进行格式化操作，推荐使用 <code>ext4</code> 文件系统 （一般都是使用这个经历了时间的考验）<code>ext4</code> 的格式化工具是 <code>mkfs.ext4</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkfs.ext4 /dev/sdXY    <span class="comment"># sdXY 为目标分区</span></span><br></pre></td></tr></table></figure>
+<p>依次格式化你分配的分区 <code>/boot</code> <code>/</code> 如有其他需要也可以分配 <code>/home</code> 等，根据实际情况自行判断</p>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/format.png" alt="format"></p>
+<blockquote>
+<p>对于 <code>ESP</code> 分区 使用 <code>msfs.fat</code> 进行格式化 不然会导致 <code>UEFI BIOS</code> 无法获取启动引导文件<br><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/format-esp.png" alt="format-esp"></p>
+</blockquote>
+<h3 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h3><blockquote>
+<p>挂载需要按照一定的顺序进行</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mount &lt;分区&gt; &lt;挂载点&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/mount-part.png" alt="mount-part"></p>
+<h2 id="安装基础系统"><a href="#安装基础系统" class="headerlink" title="安装基础系统"></a>安装基础系统</h2><p>使用 <code>pacstrap</code> 脚本，安装 <code>base</code> 组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pacstrap -i /mnt base</span><br><span class="line"><span class="comment">##  如果需要其他软件 比如 `base-devel`</span></span><br><span class="line">$ pacstrap -i /mnt base base-devel</span><br></pre></td></tr></table></figure>
+<h2 id="配置基础系统"><a href="#配置基础系统" class="headerlink" title="配置基础系统"></a>配置基础系统</h2><h3 id="生成分区表"><a href="#生成分区表" class="headerlink" title="生成分区表"></a>生成分区表</h3><blockquote>
+<p>生成只会可以手动 <code>cat</code> 查看生成是否有误</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p>使用 <code>arch-chroot</code> 进入刚安装好的基础系统进行配置操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+<h3 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h3><p>假设你在中国可以使用 <code>Asia</code> <code>Shanghai</code> 作为时区位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></table></figure>
+<h3 id="硬件时间设置"><a href="#硬件时间设置" class="headerlink" title="硬件时间设置"></a>硬件时间设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hwclock --systohc</span><br></pre></td></tr></table></figure>
+<h3 id="区域设置-Region"><a href="#区域设置-Region" class="headerlink" title="区域设置 (Region)"></a>区域设置 (Region)</h3><p>通过编辑 <code>/etc/locale.gen</code> 将需要的 <code>locale</code> 取消注释即可 (行头的 <code>#</code> 号)</p>
+<p>然后使用命令 <code>locale-gen</code> 生成 <code>locale</code></p>
+<blockquote>
+<p>我一般只选择：<br>en_US.UTF-8 UTF-8<br>zh_CN.UTF-8 UTF-8<br>zh_TW.UTF-8 UTF-8</p>
+</blockquote>
+<h4 id="设置默认-locale"><a href="#设置默认-locale" class="headerlink" title="设置默认 locale"></a>设置默认 <code>locale</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> LANG=en_US.UTF-8  &gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS:<br>我建议使用 <code>en_US</code> 作为默认的 <code>locale</code> 因为这样不造成 <code>tty</code> 乱码，而且一般遇到问题也可以凭借<code>嘤文</code>错误信息在 <code>搜索引擎</code> 中更加方便的找到解决方案</p>
+</blockquote>
+<h3 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> &lt;主机名&gt; &gt; /etc/hostname</span><br><span class="line"><span class="comment">## 例如</span></span><br><span class="line">$ <span class="built_in">echo</span> ArchLinux &gt; /etc/hostname</span><br></pre></td></tr></table></figure>
+<p>然后在 <code>/etc/hosts</code> 添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1	localhost.localdomain	localhost</span><br><span class="line">::1		   localhost.localdomain	localhost</span><br><span class="line">127.0.1.1	&lt;主机名&gt;.localdomain	&lt;主机名&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><ul>
+<li>有线连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl <span class="built_in">enable</span> dhcpcd</span><br></pre></td></tr></table></figure>
+<ul>
+<li>无线连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S iw wpa_supplicant dialog</span><br></pre></td></tr></table></figure>
+<h2 id="Initramfs"><a href="#Initramfs" class="headerlink" title="Initramfs"></a>Initramfs</h2><blockquote>
+<p>一般情况下你不需要创建 <code>initramfs</code> 如果你修改了 <code>mkinitcpio.conf</code> 则用下面的命令生成 <code>initramfs</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkinitcpio -p linux</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PS：<br>保险起见我建议还是执行一下为妙 </p>
+</blockquote>
+<h2 id="设置-Root-密码"><a href="#设置-Root-密码" class="headerlink" title="设置 Root 密码"></a>设置 Root 密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ passwd</span><br></pre></td></tr></table></figure>
+<h2 id="安装引导程序"><a href="#安装引导程序" class="headerlink" title="安装引导程序"></a>安装引导程序</h2><p>一般通常使用 <code>Grub</code> 作为引导程序</p>
+<ul>
+<li>BIOS 系统</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S grub os-prober</span><br><span class="line">$ grub-install --target=i386-pc /dev/sdX    # sdX 为目标磁盘</span><br><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<ul>
+<li>UEFI 系统</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S dosfstools grub efibootmgr</span><br><span class="line">$ grub-install --target=x86_64-efi --efi-directory=&lt;EFI 分区挂载点&gt; --bootloader-id=grub</span><br><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p>用我的虚拟机做示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pacman -S dosfstools grub efibootmgr</span><br><span class="line">$ grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=archlinux</span><br><span class="line">$ grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<h2 id="完成安装"><a href="#完成安装" class="headerlink" title="完成安装"></a>完成安装</h2><p>使用 <code>exit</code> 或者 <code>Ctrl + D</code> 返回安装环境</p>
+<p>卸载分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ umount -R /mnt</span><br></pre></td></tr></table></figure>
+<p>重启：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>记得移除安装介质</p>
+</blockquote>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><blockquote>
+<p>日常不建议使用 <code>root</code> 用户<br>虽然我 <code>VPS</code> 用惯了敲命令老是不加 <code>sudo</code> 烦躁了就直接换成 <code>root</code> 随便浪😂</p>
+</blockquote>
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><p>使用 <code>useradd</code> 添加用户，具体详细使用方面请自行找男人(manual) 或者 <code>help</code> 帮助信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ useradd -m -g users -s /bin/bash cloverkit</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建一个名为 cloverkit 的用户，指定登录 shell 为 bash，所属主用户组 users，并在 /home 下创建同名用户文件夹。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd cloverkit</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>为 <code>cloverkit</code> 设置用户密码</p>
+</blockquote>
+<h3 id="普通用户提权配置"><a href="#普通用户提权配置" class="headerlink" title="普通用户提权配置"></a>普通用户提权配置</h3><blockquote>
+<p>使用刚创建的用户登陆系统，你会发现进行一些需要<code>提权</code>的操作即使加入 <code>sudo</code> 也无法 <code>提权</code>，我们可以通过 <code>visudo</code> 修改配置文件将我们的普通用户加入<code>提权</code>列表</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/visudo.png" alt="visudo"></p>
+<p>大概是在第 <code>79</code> 行 是 <code>root</code> 用户代配置，我们只需要比葫芦画瓢就行在其下方添加如下 <code>:wq</code> 保存即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;用户名&gt; ALL=(ALL) ALL</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/archlinux-neofetch.png" alt="arch-neofetch"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<p><a href="https://wiki.archlinux.org/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">官方 Wiki | Installation guide (简体中文)</a>)<br><a href="https://bbs.archlinuxcn.org/viewtopic.php?id=1037" target="_blank" rel="noopener">Arch Linux 安装指南[2018.03.01]</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Cloverkit
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://cloverkits.github.io/2018/08/20/ArchLinx-安装教程-图🐰文/" title="ArchLinx 安装教程 [图🐰文]">https://cloverkits.github.io/2018/08/20/ArchLinx-安装教程-图🐰文/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/折腾/" rel="tag"><i class="fa fa-tag"></i> 折腾</a>
+          
+            <a href="/tags/教程/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/19/C-Primer-Plus-第六版-带书签🔖-PDF-电子书/" rel="next" title="C Primer Plus 第六版[带书签🔖] PDF 电子书">
+                <i class="fa fa-chevron-left"></i> C Primer Plus 第六版[带书签🔖] PDF 电子书
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/27/找回-macOS-允许任何来源选项/" rel="prev" title="找回 macOS 允许任何来源选项">
+                找回 macOS 允许任何来源选项 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/logo.jpg"
+                alt="Cloverkit" />
+            
+              <p class="site-author-name" itemprop="name">Cloverkit</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://t.me/cloverkit" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/cloverkits" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArchLinux-安装教程"><span class="nav-number">1.</span> <span class="nav-text">ArchLinux 安装教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">1.1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Arch-ISO"><span class="nav-number">1.2.</span> <span class="nav-text">设置 Arch ISO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络连接测试"><span class="nav-number">1.2.1.</span> <span class="nav-text">网络连接测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步时间"><span class="nav-number">1.2.2.</span> <span class="nav-text">同步时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择软件源"><span class="nav-number">1.2.3.</span> <span class="nav-text">选择软件源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动环境检测"><span class="nav-number">1.3.</span> <span class="nav-text">启动环境检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UEFI-BIOS-检测"><span class="nav-number">1.3.1.</span> <span class="nav-text">UEFI/BIOS 检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区"><span class="nav-number">1.4.</span> <span class="nav-text">分区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分区方案"><span class="nav-number">1.4.1.</span> <span class="nav-text">分区方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分区操作"><span class="nav-number">1.4.2.</span> <span class="nav-text">分区操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#挂载分区"><span class="nav-number">1.4.3.</span> <span class="nav-text">挂载分区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装基础系统"><span class="nav-number">1.5.</span> <span class="nav-text">安装基础系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置基础系统"><span class="nav-number">1.6.</span> <span class="nav-text">配置基础系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成分区表"><span class="nav-number">1.6.1.</span> <span class="nav-text">生成分区表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改时区"><span class="nav-number">1.6.2.</span> <span class="nav-text">修改时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件时间设置"><span class="nav-number">1.6.3.</span> <span class="nav-text">硬件时间设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区域设置-Region"><span class="nav-number">1.6.4.</span> <span class="nav-text">区域设置 (Region)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置默认-locale"><span class="nav-number">1.6.4.1.</span> <span class="nav-text">设置默认 locale</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置主机名"><span class="nav-number">1.6.5.</span> <span class="nav-text">设置主机名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络配置"><span class="nav-number">1.7.</span> <span class="nav-text">网络配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initramfs"><span class="nav-number">1.8.</span> <span class="nav-text">Initramfs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Root-密码"><span class="nav-number">1.9.</span> <span class="nav-text">设置 Root 密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装引导程序"><span class="nav-number">1.10.</span> <span class="nav-text">安装引导程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成安装"><span class="nav-number">1.11.</span> <span class="nav-text">完成安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户管理"><span class="nav-number">1.12.</span> <span class="nav-text">用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户"><span class="nav-number">1.12.1.</span> <span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普通用户提权配置"><span class="nav-number">1.12.2.</span> <span class="nav-text">普通用户提权配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.13.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cloverkit</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">9.3k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'p7HYIM4iVlBK98iHVJrNzsl7-gzGzoHsz',
+        appKey: 'BSX1GPVqqrRWrtw0VzopFELW',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("p7HYIM4iVlBK98iHVJrNzsl7-gzGzoHsz", "BSX1GPVqqrRWrtw0VzopFELW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+</body>
+</html>
