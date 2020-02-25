@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/mount-part.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/visudo.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/archlinux-neofetch.png">
-<meta property="og:updated_time" content="2020-02-25T06:25:16.324Z">
+<meta property="og:updated_time" content="2020-02-25T07:11:34.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArchLinx 安装教程 [图🐰文]">
 <meta name="twitter:description" content="ArchLinux 安装教程 启动 从安装介质启动 ArchLinux 并选择 ArchLinux archlinuxiso x86_64 UEFI CD 引导启动  PS:当前假设你以 UEFI 方式引导 Arch Linux如果你是 Legacy BIOS 方式界面会稍有不同   当屏幕出现命令提示符及闪烁的光标即启动完毕 设置 Arch ISO网络连接测试通过 ping 命令测试网络连通性">
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,529 字
+                  1,536 字
                 </span>
               
 
@@ -495,7 +495,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mount &lt;分区&gt; &lt;挂载点&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/mount-part.png" alt="mount-part"></p>
 <h2 id="安装基础系统"><a href="#安装基础系统" class="headerlink" title="安装基础系统"></a>安装基础系统</h2><p>使用 <code>pacstrap</code> 脚本，安装 <code>base</code> 组</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pacstrap -i /mnt base</span><br><span class="line"><span class="comment">##  如果需要其他软件 比如 `base-devel`</span></span><br><span class="line">$ pacstrap -i /mnt base base-devel</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pacstrap -i /mnt base linux linux-firmware dhcpcd</span><br><span class="line"><span class="comment">##  如果需要其他软件 比如 `base-devel`</span></span><br><span class="line">$ pacstrap -i /mnt base base-devel linux linux-firmware dhcpcd</span><br></pre></td></tr></table></figure>
 <h2 id="配置基础系统"><a href="#配置基础系统" class="headerlink" title="配置基础系统"></a>配置基础系统</h2><h3 id="生成分区表"><a href="#生成分区表" class="headerlink" title="生成分区表"></a>生成分区表</h3><blockquote>
 <p>生成只会可以手动 <code>cat</code> 查看生成是否有误</p>
 </blockquote>
@@ -516,7 +516,7 @@
 </blockquote>
 <h3 id="设置主机名"><a href="#设置主机名" class="headerlink" title="设置主机名"></a>设置主机名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> &lt;主机名&gt; &gt; /etc/hostname</span><br><span class="line"><span class="comment">## 例如</span></span><br><span class="line">$ <span class="built_in">echo</span> ArchLinux &gt; /etc/hostname</span><br></pre></td></tr></table></figure>
 <p>然后在 <code>/etc/hosts</code> 添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1	localhost.localdomain	localhost</span><br><span class="line">::1		   localhost.localdomain	localhost</span><br><span class="line">127.0.1.1	&lt;主机名&gt;.localdomain	&lt;主机名&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1	localhost.localdomain   localhost</span><br><span class="line">::1		   localhost.localdomain   localhost</span><br><span class="line">127.0.1.1	&lt;主机名&gt;.localdomain &lt;主机名&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><ul>
 <li>有线连接</li>
 </ul>
@@ -528,7 +528,7 @@
 <h2 id="Initramfs"><a href="#Initramfs" class="headerlink" title="Initramfs"></a>Initramfs</h2><blockquote>
 <p>一般情况下你不需要创建 <code>initramfs</code> 如果你修改了 <code>mkinitcpio.conf</code> 则用下面的命令生成 <code>initramfs</code></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkinitcpio -p linux</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkinitcpio -P</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>PS：<br>保险起见我建议还是执行一下为妙 </p>
 </blockquote>
