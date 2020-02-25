@@ -45,6 +45,32 @@
   </entry>
   
   <entry>
+    <title>macOS 使用 DOSBox 搭建 8086 汇编环境</title>
+    <link href="https://cloverkits.github.io/2019/06/17/macOS-%E4%BD%BF%E7%94%A8-DOSBox-%E6%90%AD%E5%BB%BA-8086-%E6%B1%87%E7%BC%96%E7%8E%AF%E5%A2%83/"/>
+    <id>https://cloverkits.github.io/2019/06/17/macOS-使用-DOSBox-搭建-8086-汇编环境/</id>
+    <published>2019-06-17T06:33:50.000Z</published>
+    <updated>2020-02-25T06:46:37.396Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/assembly.jpg" alt=""></p><h2 id="0x00-什么是汇编语言"><a href="#0x00-什么是汇编语言" class="headerlink" title="0x00 什么是汇编语言"></a>0x00 什么是汇编语言</h2><blockquote><p>汇编语言（英语：assembly language) 是一种用于电子计算机、微处理器、微控制器，或其他可编程器件的低级语言。在不同的设备中，汇编语言对应着不同的机器语言指令集。一种汇编语言专用于某种计算机系统结构，而不像许多高级语言，可以在不同系统平台之间移植。</p></blockquote><h2 id="0x01-安装-DOSBox"><a href="#0x01-安装-DOSBox" class="headerlink" title="0x01 安装 DOSBox"></a>0x01 安装 DOSBox</h2><p>在 <code>macOS</code> 平台我们一般习惯于通过 <code>App Store</code> 来安装所需的软件,可惜的是 <code>DOSBox</code> 并没有在 <code>App Store</code> 上架, 我们可以通过访问其官方网站来了解和下载它</p><p>官方网站:<br><a href="https://www.dosbox.com/download.php?main=1" target="_blank" rel="noopener">https://www.dosbox.com/download.php?main=1</a></p><p>除此之外在 <code>macOS</code> 平台还有一种优雅的软件安装方式, 使用 Homebrew 包管理来安装想要的软件,如果你安装了 <code>Homebrew</code> 可以在终端输入下面的命令快速获得 <code>DOSBox</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install dosbox</span><br></pre></td></tr></table></figure><p>我这里已经安装好了,所以出现 <code>already installed</code> 提示信息</p><p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/dosbox_install.png" alt=""></p><h2 id="0x02-配置-DOSBox-模拟器"><a href="#0x02-配置-DOSBox-模拟器" class="headerlink" title="0x02 配置 DOSBox 模拟器"></a>0x02 配置 DOSBox 模拟器</h2><p>初次打开 <code>DOSBox</code> 你将会看到如下图所示的界面</p><p><img src="https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/DOSBox_Main.png" alt=""></p><p>我们需要用到 <code>debug</code> 和 <code>masm</code> 编译器等程序来学习 <code>8086 汇编</code>, 下面将通过 <code>mount</code> 命令挂载当前 <code>用户目录</code> 下的 <code>masm</code> 文件夹为 <code>C:\</code> 盘驱动器共享本机和模拟器的数据</p><p><img src="https://github.com/cloverkits/hexo_picture_resource/blob/master/picture/DOSBox_Mount.png?raw=true" alt=""></p><p><code>masm</code> 文件夹里有以下文件:</p><p><img src="https://github.com/cloverkits/hexo_picture_resource/blob/master/picture/DOSBox_document.png?raw=true" alt=""></p><p>然后直接在命令行执行 <code>debug</code> 命令就可以进入 <code>debug</code> 调试程序的交互界面</p><p><img src="https://github.com/cloverkits/hexo_picture_resource/blob/master/picture/DOSBox_debug.png?raw=true" alt=""></p><p>不过,每一次都需要手动挂载目录岂不是太不方便了!<br>通过查阅 <code>DOSBox</code> 的官方文档,发现可以通过修改 <code>dosbox.conf</code> 配置文件来设置模拟器的各项参数和启动时执行的命令, 这样的话我们只需要在 <code>dosbox.conf</code> 中加入所需的 “初始化” 命令就可以实现自动化操作</p><blockquote><p>macOS 系统中 <code>dosbox.conf</code> 位于:<br><code>~/Library/Preferences/DOSBox\ 0.74-2\ Preferences</code></p></blockquote><p>图中的 <strong>高亮行</strong> 就是我加入的命令,大家可以根据实际情况修改</p><p><img src="https://github.com/cloverkits/hexo_picture_resource/blob/master/picture/DOSBox_chconfig.png?raw=true" alt=""></p><h2 id="0x03-相关程序下载"><a href="#0x03-相关程序下载" class="headerlink" title="0x03 相关程序下载"></a>0x03 相关程序下载</h2><blockquote><p>百度云☁️：<br>链接: <a href="https://pan.baidu.com/s/1GlbyyEF6MgAQoqAf_K9BDg" target="_blank" rel="noopener">https://pan.baidu.com/s/1GlbyyEF6MgAQoqAf_K9BDg</a><br>邀请码: <code>jhjg</code></p></blockquote><h2 id="0x04-参考资料"><a href="#0x04-参考资料" class="headerlink" title="0x04 参考资料"></a>0x04 参考资料</h2><p><a href="https://www.dosbox.com/wiki/Dosbox.conf#Mac_OS_X" target="_blank" rel="noopener">DOSBox 官方文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/cloverkits/hexo_picture_resource/master/picture/assembly.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;0x00-什么是汇编语
+      
+    
+    </summary>
+    
+      <category term="汇编" scheme="https://cloverkits.github.io/categories/%E6%B1%87%E7%BC%96/"/>
+    
+    
+      <category term="教程" scheme="https://cloverkits.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows 10 下访问校园网共享服务器</title>
     <link href="https://cloverkits.github.io/2018/12/15/smb-solve/"/>
     <id>https://cloverkits.github.io/2018/12/15/smb-solve/</id>
