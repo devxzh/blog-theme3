@@ -3,12 +3,31 @@
 
 
     
-    
-    
+  <url>
+    <loc>https://cloverkits.github.io/2020/02/25/iTerm2-%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96%E6%8C%87%E5%8C%97/</loc>
+    <lastmod>2020-02-25T04:03:42.595Z</lastmod>
+    <data>
+        <display>
+        <title>iTerm2 终端美化指北</title>
+        <pubTime>2020-02-25T02:38:29.000Z</pubTime>
+        
+        <tag>教程</tag>
+         
+        <tag>Terminal</tag>
+         
+         
+           
+             
+              <breadCrumb title="macOS" url="https://cloverkits.github.io/categories/macOS/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://cloverkits.github.io/2018/08/07/%E9%85%8D%E7%BD%AE-V2Ray-%E5%92%8C%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2020-02-07T11:32:38.642Z</lastmod>
+    <lastmod>2020-02-25T02:34:58.124Z</lastmod>
     <data>
         <display>
         <title>配置 V2Ray 和路由器透明代理</title>
@@ -25,6 +44,9 @@
     </data>
     </url>
 
+    
+    
+    
     
   <url>
     <loc>https://cloverkits.github.io/2018/08/07/%E6%8A%80%E5%98%89-H61M-DS2-Rev3-0-Ozmosis-167x-BIOS-%E5%9B%BA%E4%BB%B6/</loc>
@@ -76,9 +98,9 @@
         
         <tag>技巧</tag>
          
-        <tag>工具</tag>
-         
         <tag>GitHub</tag>
+         
+        <tag>工具</tag>
          
         <tag>hexo</tag>
          
@@ -86,6 +108,28 @@
            
              
               <breadCrumb title="工具" url="https://cloverkits.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://cloverkits.github.io/2018/08/17/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-macOS-%E4%BC%98%E9%9B%85%E7%9A%84%E6%88%AA%E5%9B%BE/</loc>
+    <lastmod>2020-02-07T11:32:38.641Z</lastmod>
+    <data>
+        <display>
+        <title>如何使用 macOS 优雅的截图</title>
+        <pubTime>2018-08-16T16:13:16.000Z</pubTime>
+        
+        <tag>技巧</tag>
+         
+        <tag>macOS</tag>
+         
+         
+           
+             
+              <breadCrumb title="技巧" url="https://cloverkits.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
           
         </display>
     </data>
@@ -127,34 +171,12 @@
         <title>找回 macOS 允许任何来源选项</title>
         <pubTime>2018-08-27T11:25:45.000Z</pubTime>
         
-        <tag>技巧</tag>
-         
         <tag>Terminal</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://cloverkits.github.io/2018/08/17/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-macOS-%E4%BC%98%E9%9B%85%E7%9A%84%E6%88%AA%E5%9B%BE/</loc>
-    <lastmod>2020-02-07T11:32:38.641Z</lastmod>
-    <data>
-        <display>
-        <title>如何使用 macOS 优雅的截图</title>
-        <pubTime>2018-08-16T16:13:16.000Z</pubTime>
-        
         <tag>技巧</tag>
          
-        <tag>macOS</tag>
-         
          
            
-             
-              <breadCrumb title="技巧" url="https://cloverkits.github.io/categories/%E6%8A%80%E5%B7%A7/"/>
-          
         </display>
     </data>
     </url>
@@ -168,9 +190,9 @@
         <title>macOS 临时切换应用的界面语言</title>
         <pubTime>2018-08-12T14:48:47.000Z</pubTime>
         
-        <tag>技巧</tag>
-         
         <tag>Terminal</tag>
+         
+        <tag>技巧</tag>
          
          
            
