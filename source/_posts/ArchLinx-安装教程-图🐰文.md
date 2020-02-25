@@ -77,8 +77,8 @@ $ ls /sys/firmware/efi/efivars
 > UEFI 启动对应 `GUID` 分区表 `Legacy BIOS` 方式启动对应 `MBR`分区表
 
 ### 分区方案
-* 一般而言对于 `Linux` 需要至少需要一个分区分配给`根目录` `/`
-* 对于 `UEFI` 则额外需要一个 `UEFI` 系统分区 `ESP` 通常也叫做 `EFI` 分区
+- 一般而言对于 `Linux` 需要至少需要一个分区分配给`根目录` `/`
+- 对于 `UEFI` 则额外需要一个 `UEFI` 系统分区 `ESP` 通常也叫做 `EFI` 分区
 
 ### 分区操作
 
@@ -134,9 +134,9 @@ $ mount <分区> <挂载点>
 使用 `pacstrap` 脚本，安装 `base` 组
 
 ```bash
-$ pacstrap -i /mnt base
+$ pacstrap -i /mnt base linux linux-firmware dhcpcd
 ##  如果需要其他软件 比如 `base-devel`
-$ pacstrap -i /mnt base base-devel
+$ pacstrap -i /mnt base base-devel linux linux-firmware dhcpcd
 ```
 
 ## 配置基础系统
@@ -198,9 +198,9 @@ $ echo ArchLinux > /etc/hostname
 然后在 `/etc/hosts` 添加
 
 ```bash
-127.0.0.1	localhost.localdomain	localhost
-::1		   localhost.localdomain	localhost
-127.0.1.1	<主机名>.localdomain	<主机名>
+127.0.0.1	localhost.localdomain   localhost
+::1		   localhost.localdomain   localhost
+127.0.1.1	<主机名>.localdomain <主机名>
 ```
 
 ## 网络配置
@@ -222,7 +222,7 @@ $ pacman -S iw wpa_supplicant dialog
 > 一般情况下你不需要创建 `initramfs` 如果你修改了 `mkinitcpio.conf` 则用下面的命令生成 `initramfs`
 
 ```bash
-$ mkinitcpio -p linux
+$ mkinitcpio -P
 ```
 
 >PS：
